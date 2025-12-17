@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hot Offers | Jersey Wear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="test.css">
+<!-- Add cart.css for cart modal styling -->
+<link rel="stylesheet" href="cart.css">
+<script src="script.js" defer></script>
+<script src="cart.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="menu" id="menuBtn">☰</div>
+  <a href="test.html" class="logo">JERSEY<span>Wears</span></a>
+  <div class="icons">
+    <button id="themeToggle" class="theme-btn">🌙</button>
+    <a href="profile.html">👤</a>
+    <button id="cartBtn" class="cart-btn">🛒 
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" id="closeSidebar">×</div>
+  <a href="test.html">HOME</a>
+  <a href="#">2025 SEASAON</a>
+  <a href="#">2024 SEASAON</a>
+  <a href="#">2023 SEASAON</a>
+  <a href="#">ICONIC JERSEYS</a>
+  <a href="#">NATIONAL JERSEYS</a>
+  <a href="world_cup.html">WORLD CUP JERSEYS</a>
+  <a href="special_edition.html">SPECIAL EDITIONS</a>
+  <a href="hot_offer.html">HOT OFFERS</a>
+  <a href="profile.html">Log in</a>
+  <div class="socials">
+    <span>📸</span>
+    <span>📘</span>
+  </div>
+</div>
+
+<!-- HOT HERO -->
+<section class="hot-hero">
+  <h1>🔥 HOT OFFERS 🔥</h1>
+  <p>Limited time discounts on premium jerseys</p>
+</section>
+
+<!-- HOT PRODUCTS -->
+<section class="products hot-products">
+
+  <div class="product-card hot-card" data-id="25">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-50%</span>
+    <img src="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw3dbcd6a2/images/large/701241485001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit"
+         data-hover="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw5d570cbd/images/large/701241485001_pp_02_mcfc.png?sw=1600&sh=1600&sm=fit">
+    <h3>Christmas Man City Jersey</h3>
+    <p class="price"><del>LE 3000</del><span>LE 1500</span></p>
+    <button class="add-to-cart" 
+      data-product='{"id": 25, "name": "Christmas Man City Jersey", "price": 1500, "image": "https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw3dbcd6a2/images/large/701241485001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card hot-card" data-id="26">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-30%</span>
+    <img src="https://mufc-live.cdn.scayle.cloud/images/37253ea8264864e69d9c5dfdd28b8569.jpg?brightness=1&width=576&height=768&quality=70&bg=ffffffp"
+         data-hover="https://mufc-live.cdn.scayle.cloud/images/f03a5195d57b2a0ede713e4f0e852fc7.jpg?brightness=1&width=576&height=768&quality=70&bg=ffffff">
+    <h3>Man United 2025/26 Home Kit</h3>
+    <p class="price"><del>LE 2000</del><span>LE 1400</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 26, "name": "Man United 2025/26 Home Kit", "price": 1400, "image": "https://mufc-live.cdn.scayle.cloud/images/37253ea8264864e69d9c5dfdd28b8569.jpg?brightness=1&width=576&height=768&quality=70&bg=ffffffp"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card hot-card" data-id="27">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-35%</span>
+    <img src="https://store.fcbarcelona.com/cdn/shop/files/Mainbannermobile.jpg?v=1751433997&width=1200"
+         data-hover="https://store.fcbarcelona.com/cdn/shop/files/HJ5216-456_431720906_D_P_1X1_fa8e1d3f-8094-4dc8-b5b0-7e2a097620db.jpg?v=1763654826&width=1200">
+    <h3>Barcelona 2025/26 Home Kit</h3>
+    <p class="price"><del>LE 2000</del><span>LE 1300</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 27, "name": "Barcelona 2025/26 Home Kit", "price": 1300, "image": "https://store.fcbarcelona.com/cdn/shop/files/Mainbannermobile.jpg?v=1751433997&width=1200"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Add more hot offer products -->
+  <div class="product-card hot-card" data-id="28">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-40%</span>
+    <img src="https://images.prodirectsport.com/ProductImages/Main/1002396_Main_Thumb_1676396.jpg"
+         data-hover="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0ab0e43d-f92e-426d-bf15-339f4273e338/paris-saint-germain-2023-24-match-third-jordan-dri-fit-adv-football-shirt-plQ38M.png">
+    <h3>PSG Jordan Third Kit</h3>
+    <p class="price"><del>LE 2200</del><span>LE 1320</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 28, "name": "PSG Jordan Third Kit", "price": 1320, "image": "https://images.prodirectsport.com/ProductImages/Main/1002396_Main_Thumb_1676396.jpg"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card hot-card" data-id="29">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-45%</span>
+    <img src="https://www.footballshirtculture.com/images/stories/ajax-2021-2022-third-kit/ajax_2021_2022_third_kit_c.jpeg"
+         data-hover="https://1.bp.blogspot.com/-qXSx28d8zLI/YR9fdjoqs5I/AAAAAAACyUI/PVDkxNnCquMcQ8oGk8x2RuTi7CxyIlUlACLcBGAsYHQ/s1600/ajax-21-22-third-kit-5.jpg">
+    <h3>Ajax Bob Marley Edition</h3>
+    <p class="price"><del>LE 1800</del><span>LE 990</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 29, "name": "Ajax Bob Marley Edition", "price": 990, "image": "https://www.footballshirtculture.com/images/stories/ajax-2021-2022-third-kit/ajax_2021_2022_third_kit_c.jpeg"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card hot-card" data-id="30">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-50%</span>
+    <img src="https://image-cdn.hypb.st/https://hypebeast.com/image/2022/10/fifa-world-cup-2022-best-kits-uniforms-8.jpg?w=1260&format=jpeg&cbr=1&q=90&fit=max"
+         data-hover="https://cdn.mos.cms.futurecdn.net/u8LEabDgwcpRcCYy4MvFo9.jpg">
+    <h3>Japan World Cup Jersey</h3>
+    <p class="price"><del>LE 2000</del><span>LE 1000</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 30, "name": "Japan World Cup Jersey", "price": 1000, "image": "https://image-cdn.hypb.st/https://hypebeast.com/image/2022/10/fifa-world-cup-2022-best-kits-uniforms-8.jpg?w=1260&format=jpeg&cbr=1&q=90&fit=max"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card hot-card" data-id="31">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-30%</span>
+    <img src="https://mufc-live.cdn.scayle.cloud/images/897422a07fd33f47d9430ab179fd53f2.jpg?brightness=1&width=576&height=768&quality=70&bg=ffffff"
+         data-hover="https://mufc-live.cdn.scayle.cloud/images/14f3341c3c4b8a31d9051446d4cddb12.jpg?brightness=1&width=576&height=768&quality=70&bg=ffffff">
+    <h3>Manchester United Women's Crop</h3>
+    <p class="price"><del>LE 1600</del><span>LE 1120</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 31, "name": "Manchester United Women's Crop", "price": 1120, "image": "https://mufc-live.cdn.scayle.cloud/images/897422a07fd33f47d9430ab179fd53f2.jpg?brightness=1&width=576&height=768&quality=70&bg=ffffff"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card hot-card" data-id="32">
+    <span class="hot-badge">🔥 HOT</span>
+    <span class="sale">-25%</span>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD44kO9kBDbsbiWE97kS-zi5TqBghlJuxOD-EzjuVD5tMH1jcZx4wBsO4xRhf0YvN4Fhxp2meoa4s2wY00KES2npccbuJaG2c5oDNxFD5CdLANy9dCkx7uEWgLQA9tB8xRRf9dw2lSOR1TpXC1BEkbgJnyudO8zvl4aGFG_tYqcIn4yWlbpLxTkH_fZCGb/s1000/Al%20Ahly%2025-26%20Home%20Kit%20Released%20+%20Away%20Kit%20Leaked%20%20(12).jpg"
+         data-hover="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXpHE1-4ddMQJbsy1S7gRhKXEhjO2HlOjGCuxoshnlNrC_sPGVMEXRlnZR6VfhQ-y_Of0lbXnqfVl6EbPj_Q0ZJG925LOyugzpQnUKUNmsKHYT8qh_hEO3tHPqR7Uij__YejBnRAG4JjQ7kv31ztWFBhkBrn3wpY0HZYr4A5ZRyNPa5Y8UdGZra3kp6rh1/s1600/Al%20Ahly%2025-26%20Home%20Kit%20Released%20+%20Away%20Kit%20Leaked%20%20%284%29.jpg">
+    <h3>Al Ahly 2025-26 Home Kit</h3>
+    <p class="price"><del>LE 1800</del><span>LE 1350</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 32, "name": "Al Ahly 2025-26 Home Kit", "price": 1350, "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD44kO9kBDbsbiWE97kS-zi5TqBghlJuxOD-EzjuVD5tMH1jcZx4wBsO4xRhf0YvN4Fhxp2meoa4s2wY00KES2npccbuJaG2c5oDNxFD5CdLANy9dCkx7uEWgLQA9tB8xRRf9dw2lSOR1TpXC1BEkbgJnyudO8zvl4aGFG_tYqcIn4yWlbpLxTkH_fZCGb/s1000/Al%20Ahly%2025-26%20Home%20Kit%20Released%20+%20Away%20Kit%20Leaked%20%20(12).jpg"}'>
+      Add to Cart
+    </button>
+  </div>
+
+</section>
+
+<!-- CART MODAL -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-modal-content">
+    <div class="cart-modal-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart-btn" id="closeCartBtn">×</button>
+    </div>
+    <div class="cart-modal-body" id="cartModalBody">
+      <!-- Cart items will be loaded here -->
+    </div>
+    <div class="cart-modal-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="modalCartTotal">LE 0.00</span>
+      </div>
+      <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+        View Full Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>JERSEY<span>Wear</span></h2>
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-menu">
+      <a href="test.html">HOME</a>
+      <a href="#">2025 SEASAON</a>
+      <a href="#">2024 SEASAON</a>
+      <a href="#">2023 SEASAON</a>
+      <a href="#">ICONIC JERSEYS</a>
+      <a href="#">NATIONAL JERSEYS</a>
+      <a href="world_cup.html">WORLD CUP JERSEYS</a>
+      <a href="special_edition.html">SPECIAL EDITIONS</a>
+      <a href="hot_offer.html">HOT OFFERS</a>
+      <a href="profile.html">Log in</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-newsletter">
+      <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+      <p>Be the first to know about our newest arrivals,<br>
+         special offers and store events near you!</p>
+      <div class="newsletter-box">
+        <input type="email" placeholder="Enter your email">
+        <button>✉</button>
+      </div>
+      <div class="footer-socials">
+        <span>f</span>
+        <span>📘</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Jersey Wears</p>
+    <p>Powered by Afroto</p>
+  </div>
+</footer>
+
+</body>
+</html>

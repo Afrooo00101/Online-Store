@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>World Cup Editions | Jersey Wear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="test.css">
+<!-- Add cart.css for cart modal styling -->
+<link rel="stylesheet" href="cart.css">
+<script src="script.js" defer></script>
+<script src="cart.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="menu" id="menuBtn">☰</div>
+  <a href="test.html" class="logo">JERSEY<span>Wears</span></a>
+  <div class="icons">
+    <button id="themeToggle" class="theme-btn">🌙</button>
+    <a href="profile.html">👤</a>
+    <button id="cartBtn" class="cart-btn">🛒 
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" id="closeSidebar">×</div>
+  <a href="test.html">HOME</a>
+  <a href="#">2025 SEASAON</a>
+  <a href="#">2024 SEASAON</a>
+  <a href="#">2023 SEASAON</a>
+  <a href="#">ICONIC JERSEYS</a>
+  <a href="#">NATIONAL JERSEYS</a>
+  <a href="world_cup.html">WORLD CUP JERSEYS</a>
+  <a href="special_edition.html">SPECIAL EDITIONS</a>
+  <a href="hot_offer.html">HOT OFFERS</a>
+  <a href="profile.html">Log in</a>
+  <div class="socials">
+    <span>📸</span>
+    <span>📘</span>
+  </div>
+</div>
+
+<!-- WORLD CUP HERO -->
+<section class="wc-hero">
+  <h1>🏆 WORLD CUP EDITIONS</h1>
+  <p>Legends. History. Glory.</p>
+</section>
+
+<!-- WORLD CUP PRODUCTS -->
+<section class="products wc-products">
+  <div class="product-card wc-card" data-id="9">
+    <span class="wc-badge">🏆 WC 2026</span>
+    <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/afa75f31d81e475599f87196a29956e2_9366/Argentina_26_Home_Messi_Jersey_White_KA8117_21_model.jpg"
+        data-hover="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/bd79d9df852a4c7580143efcd8e908cb_9366/Argentina_26_Home_Messi_Jersey_White_KA8117_23_model.jpg">
+    <h3>Argentina 2026 World Cup Jersey</h3>
+    <p class="price"><del>LE 3000</del><span>LE 2000</span></p>
+    <button class="add-to-cart" 
+      data-product='{"id": 9, "name": "Argentina 2026 World Cup Jersey", "price": 2000, "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/afa75f31d81e475599f87196a29956e2_9366/Argentina_26_Home_Messi_Jersey_White_KA8117_21_model.jpg"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card wc-card" data-id="10">
+    <span class="wc-badge">🏆 WC 85</span>
+    <img src="https://classic11.com/cdn/shop/files/IMG_20251202_123753_940x.jpg?v=1764684621"
+        data-hover="https://classic11.com/cdn/shop/files/IMG_20251202_123855_940x.jpg?v=1764684621">
+    <h3>1985/86 France Home Football Shirt</h3>
+    <p class="price"><del>LE 2800</del><span>LE 1700</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 10, "name": "1985/86 France Home Football Shirt", "price": 1700, "image": "https://classic11.com/cdn/shop/files/IMG_20251202_123753_940x.jpg?v=1764684621"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card wc-card" data-id="11">
+    <span class="wc-badge">🏆 WC 2014</span>
+    <img src="https://classic11.com/cdn/shop/files/20250916_134051_940x.jpg?v=1758102214"
+        data-hover="https://classic11.com/cdn/shop/files/20250916_134059_940x.jpg?v=1764328735">
+    <h3>Germany 2014 World Cup Jersey</h3>
+    <p class="price"><del>LE 2600</del><span>LE 1600</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 11, "name": "Germany 2014 World Cup Jersey", "price": 1600, "image": "https://classic11.com/cdn/shop/files/20250916_134051_940x.jpg?v=1758102214"}'>
+      Add to Cart
+    </button>
+  </div>
+  
+  <div class="product-card wc-card" data-id="12">
+    <span class="wc-badge">🏆 WC 93</span>
+    <img src="https://classic11.com/cdn/shop/files/IMG_20241011_125938_940x.jpg?v=1729071708"
+        data-hover="https://classic11.com/cdn/shop/files/IMG_20241011_125941_940x.jpg?v=1755529412">
+    <h3>1993/94 Brazil Home Football Shirt</h3>
+    <p class="price"><del>LE 2600</del><span>LE 1600</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 12, "name": "1993/94 Brazil Home Football Shirt", "price": 1600, "image": "https://classic11.com/cdn/shop/files/IMG_20241011_125938_940x.jpg?v=1729071708"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Add more World Cup jerseys here -->
+  <div class="product-card wc-card" data-id="13">
+    <span class="wc-badge">🏆 WC 2022</span>
+    <img src="https://images.prodirectsport.com/ProductImages/Main/1213587_Main_Thumb_0913988.jpg"
+        data-hover="https://cdn.mos.cms.futurecdn.net/u8LEabDgwcpRcCYy4MvFo9.jpg">
+    <h3>Japan 2022 World Cup Jersey</h3>
+    <p class="price"><del>LE 2400</del><span>LE 1500</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 13, "name": "Japan 2022 World Cup Jersey", "price": 1500, "image": "https://images.prodirectsport.com/ProductImages/Main/1213587_Main_Thumb_0913988.jpg"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card wc-card" data-id="14">
+    <span class="wc-badge">🏆 WC 1998</span>
+    <img src="https://classicfootballshirts.co.uk/cdn/shop/products/1998-Holland-Home-Shirt_0.jpg?v=1639415025"
+        data-hover="https://classicfootballshirts.co.uk/cdn/shop/products/1998-Holland-Home-Shirt_1.jpg?v=1639415025">
+    <h3>Netherlands 1998 World Cup Jersey</h3>
+    <p class="price"><del>LE 2200</del><span>LE 1400</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 14, "name": "Netherlands 1998 World Cup Jersey", "price": 1400, "image": "https://classicfootballshirts.co.uk/cdn/shop/products/1998-Holland-Home-Shirt_0.jpg?v=1639415025"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card wc-card" data-id="15">
+    <span class="wc-badge">🏆 WC 2010</span>
+    <img src="https://cdn.shopify.com/s/files/1/0830/7965/products/PNG_Spain_2010_Home_Nike_David_Villa_1024x1024.png?v=1664458357"
+        data-hover="https://images.prodirectsport.com/ProductImages/Main/271409_Main_Thumb_0464860.jpg">
+    <h3>Spain 2010 World Cup Jersey</h3>
+    <p class="price"><del>LE 2500</del><span>LE 1550</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 15, "name": "Spain 2010 World Cup Jersey", "price": 1550, "image": "https://cdn.shopify.com/s/files/1/0830/7965/products/PNG_Spain_2010_Home_Nike_David_Villa_1024x1024.png?v=1664458357"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card wc-card" data-id="16">
+    <span class="wc-badge">🏆 WC 2002</span>
+    <img src="https://classicfootballshirts.co.uk/cdn/shop/products/2002-Brazil-R9-Home-Shirt_0.jpg?v=1662635444"
+        data-hover="https://classicfootballshirts.co.uk/cdn/shop/products/2002-Brazil-R9-Home-Shirt_1.jpg?v=1662635444">
+    <h3>Brazil 2002 World Cup Jersey (Ronaldo)</h3>
+    <p class="price"><del>LE 2800</del><span>LE 1800</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 16, "name": "Brazil 2002 World Cup Jersey (Ronaldo)", "price": 1800, "image": "https://classicfootballshirts.co.uk/cdn/shop/products/2002-Brazil-R9-Home-Shirt_0.jpg?v=1662635444"}'>
+      Add to Cart
+    </button>
+  </div>
+
+</section>
+
+<!-- CART MODAL -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-modal-content">
+    <div class="cart-modal-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart-btn" id="closeCartBtn">×</button>
+    </div>
+    <div class="cart-modal-body" id="cartModalBody">
+      <!-- Cart items will be loaded here -->
+    </div>
+    <div class="cart-modal-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="modalCartTotal">LE 0.00</span>
+      </div>
+      <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+        View Full Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>JERSEY<span>Wear</span></h2>
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-menu">
+      <a href="test.html">HOME</a>
+      <a href="#">2025 SEASAON</a>
+      <a href="#">2024 SEASAON</a>
+      <a href="#">2023 SEASAON</a>
+      <a href="#">ICONIC JERSEYS</a>
+      <a href="#">NATIONAL JERSEYS</a>
+      <a href="world_cup.html">WORLD CUP JERSEYS</a>
+      <a href="special_edition.html">SPECIAL EDITIONS</a>
+      <a href="hot_offer.html">HOT OFFERS</a>
+      <a href="profile.html">Log in</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-newsletter">
+      <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+      <p>Be the first to know about our newest arrivals,<br>
+         special offers and store events near you!</p>
+      <div class="newsletter-box">
+        <input type="email" placeholder="Enter your email">
+        <button>✉</button>
+      </div>
+      <div class="footer-socials">
+        <span>f</span>
+        <span>📘</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Jersey Wears</p>
+    <p>Powered by Afroto</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile | Jersey Wear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+<!-- NAVBAR (same as home for consistency) -->
+<header class="navbar">
+  <a href="test.html" class="logo">JERSEY<span>Wears</span></a>
+</header>
+
+<!-- PROFILE SECTION -->
+<section class="profile">
+
+  <div class="profile-card">
+
+    <div class="profile-avatar">
+      👤
+    </div>
+
+    <h2>Mohamed Ahmed</h2>
+    <p class="email">mohamed@email.com</p>
+
+    <div class="profile-actions">
+      <a href="#editProfile">
+     <button>Edit Profile</button>
+      </a>
+      <a href="cart.html">
+     <button>My Orders</button>
+        </a>
+
+      <button class="logout">Log Out</button>
+    </div>
+ </div>
+</section>   
+
+
+  
+<!-- EDIT PROFILE -->
+<section class="edit-profile" id="editProfile">
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="phone" placeholder="Phone">
+
+    <button type="button" onclick="saveProfile()">Save</button>
+    <button type="button" class="cancel" onclick="cancelEdit()">Cancel</button>
+    </form>
+</section>
+
+    
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
