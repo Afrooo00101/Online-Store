@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2023 Season Jerseys | Jersey Wear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="test.css">
+<!-- Add cart.css for cart modal styling -->
+<link rel="stylesheet" href="cart.css">
+<script src="script.js" defer></script>
+<script src="cart.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="menu" id="menuBtn">☰</div>
+  <a href="test.html" class="logo">JERSEY<span>Wears</span></a>
+  <div class="icons">
+    <button id="themeToggle" class="theme-btn">🌙</button>
+    <a href="profile.html">👤</a>
+    <button id="cartBtn" class="cart-btn">🛒 
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" id="closeSidebar">×</div>
+  <a href="test.html">HOME</a>
+  <a href="2025.html">2025 SEASON</a>
+  <a href="2024.html">2024 SEASON</a>
+  <a href="2023.html">2023 SEASON</a>
+  <a href="iconic.html">ICONIC JERSEYS</a>
+  <a href="national.html">NATIONAL JERSEYS</a>
+  <a href="world_cup.html">WORLD CUP JERSEYS</a>
+  <a href="special_edition.html">SPECIAL EDITIONS</a>
+  <a href="hot_offer.html">HOT OFFERS</a>
+  <a href="profile.html">Log in</a>
+  <div class="socials">
+    <span>📸</span>
+    <span>📘</span>
+  </div>
+</div>
+
+<!-- 2023 SEASON HERO -->
+<section class="season2023-hero">
+  <h1>📜 2023 SEASON 📜</h1>
+  <p>Vintage kits with classic discounts</p>
+</section>
+
+<!-- 2023 SEASON PRODUCTS -->
+<section class="products season2023-products">
+
+  <!-- Barcelona 2023 -->
+  <div class="product-card season2023-card" data-id="65" data-team="barcelona">
+    <span class="team-badge barcelona-badge">FC Barcelona</span>
+    <span class="vintage-tag">VINTAGE</span>
+    <img src="https://store.fcbarcelona.com/cdn/shop/products/2023-24-Home-Kit-1.jpg?v=1683034400&width=1200"
+         data-hover="https://store.fcbarcelona.com/cdn/shop/products/2023-24-Home-Kit-2.jpg?v=1683034400&width=1200">
+    <h3>Barcelona 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1800</del><span>LE 1200</span></p>
+    <button class="add-to-cart" 
+      data-product='{"id": 65, "name": "Barcelona 2023/24 Home Kit", "price": 1200, "image": "https://store.fcbarcelona.com/cdn/shop/products/2023-24-Home-Kit-1.jpg?v=1683034400&width=1200", "team": "Barcelona", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Liverpool 2023 -->
+  <div class="product-card season2023-card" data-id="66" data-team="liverpool">
+    <span class="team-badge liverpool-badge">Liverpool FC</span>
+    <span class="vintage-tag">CLASSIC</span>
+    <img src="https://store.liverpoolfc.com/media/catalog/product/cache/6e0c7b53c0ed72fe014b8d12b60d479c/j/y/jy4158_vvdcrop_14-1.png"
+         data-hover="https://store.liverpoolfc.com/media/catalog/product/cache/6e0c7b53c0ed72fe014b8d12b60d479c/j/y/jy4158_00118_1.jpg">
+    <h3>Liverpool 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1750</del><span>LE 1100</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 66, "name": "Liverpool 2023/24 Home Kit", "price": 1100, "image": "https://store.liverpoolfc.com/media/catalog/product/cache/6e0c7b53c0ed72fe014b8d12b60d479c/j/y/jy4158_vvdcrop_14-1.png", "team": "Liverpool", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Manchester City 2023 -->
+  <div class="product-card season2023-card" data-id="67" data-team="mancity">
+    <span class="team-badge mancity-badge">Man City</span>
+    <span class="vintage-tag">RETRO</span>
+    <img src="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw78a7e1fc/images/large/701227333001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit"
+         data-hover="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dwd1d9d4eb/images/large/701227333001_pp_02_mcfc.png?sw=1600&sh=1600&sm=fit">
+    <h3>Manchester City 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1700</del><span>LE 1150</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 67, "name": "Manchester City 2023/24 Home Kit", "price": 1150, "image": "https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw78a7e1fc/images/large/701227333001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit", "team": "Manchester City", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Real Madrid 2023 -->
+  <div class="product-card season2023-card" data-id="68" data-team="realmadrid">
+    <span class="team-badge realmadrid-badge">Real Madrid</span>
+    <span class="vintage-tag">LEGENDARY</span>
+    <img src="https://us.shop.realmadrid.com/_next/image?url=https%3A%2F%2Flegends.broadleafcloud.com%2Fapi%2Fasset%2Fcontent%2FJZ8787_01.jpg%3FcontextRequest%3D%257B%2522forceCatalogForFetch%2522%3Afalse%2C%2522forceFilterByCatalogIncludeInheritance%2522%3Afalse%2C%2522forceFilterByCatalogExcludeInheritance%2522%3Afalse%2C%2522applicationId%2522%3A%252201H4RD9NXMKQBQ1WVKM1181VD8%2522%2C%2522tenantId%2522%3A%2522REAL_MADRID%2522%257D&w=1920&q=75"
+         data-hover="https://us.shop.realmadrid.com/_next/image?url=https%3A%2F%2Flegends.broadleafcloud.com%2Fapi%2Fasset%2Fcontent%2FJZ8787_02.jpg%3FcontextRequest%3D%257B%2522forceCatalogForFetch%2522%3Afalse%2C%2522forceFilterByCatalogIncludeInheritance%2522%3Afalse%2C%2522forceFilterByCatalogExcludeInheritance%2522%3Afalse%2C%2522applicationId%2522%3A%252201H4RD9NXMKQBQ1WVKM1181VD8%2522%2C%2522tenantId%2522%3A%2522REAL_MADRID%2522%257D&w=1920&q=75">
+    <h3>Real Madrid 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1650</del><span>LE 1050</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 68, "name": "Real Madrid 2023/24 Home Kit", "price": 1050, "image": "https://us.shop.realmadrid.com/_next/image?url=https%3A%2F%2Flegends.broadleafcloud.com%2Fapi%2Fasset%2Fcontent%2FJZ8787_01.jpg%3FcontextRequest%3D%257B%2522forceCatalogForFetch%2522%3Afalse%2C%2522forceFilterByCatalogIncludeInheritance%2522%3Afalse%2C%2522forceFilterByCatalogExcludeInheritance%2522%3Afalse%2C%2522applicationId%2522%3A%252201H4RD9NXMKQBQ1WVKM1181VD8%2522%2C%2522tenantId%2522%3A%2522REAL_MADRID%2522%257D&w=1920&q=75", "team": "Real Madrid", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Arsenal 2023 -->
+  <div class="product-card season2023-card" data-id="69" data-team="arsenal">
+    <span class="team-badge arsenal-badge">Arsenal</span>
+    <span class="vintage-tag">RETRO</span>
+    <img src="https://i1.adis.ws/i/ArsenalDirect/mkb1725_f?$pdpMainZoomImage$"
+         data-hover="https://i1.adis.ws/i/ArsenalDirect/mkb1725_b?$pdpMainZoomImage$">
+    <h3>Arsenal 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1600</del><span>LE 1000</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 69, "name": "Arsenal 2023/24 Home Kit", "price": 1000, "image": "https://i1.adis.ws/i/ArsenalDirect/mkb1725_f?$pdpMainZoomImage$", "team": "Arsenal", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Bayern Munich 2023 -->
+  <div class="product-card season2023-card" data-id="70" data-team="bayern">
+    <span class="team-badge bayern-badge">Bayern Munich</span>
+    <span class="vintage-tag">CLASSIC</span>
+    <img src="https://shop.fcbayern.com/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6f8c5e6b/images/large/701235452001_pp_01_fcb.jpg?sw=1600&sh=1600&sm=fit"
+         data-hover="https://shop.fcbayern.com/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8f7d9e0d/images/large/701235452001_pp_02_fcb.jpg?sw=1600&sh=1600&sm=fit">
+    <h3>Bayern Munich 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1750</del><span>LE 1150</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 70, "name": "Bayern Munich 2023/24 Home Kit", "price": 1150, "image": "https://shop.fcbayern.com/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6f8c5e6b/images/large/701235452001_pp_01_fcb.jpg?sw=1600&sh=1600&sm=fit", "team": "Bayern Munich", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Paris Saint-Germain 2023 -->
+  <div class="product-card season2023-card" data-id="71" data-team="psg">
+    <span class="team-badge psg-badge">Paris Saint-Germain</span>
+    <span class="vintage-tag">VINTAGE</span>
+    <img src="https://store.psg.fr/on/demandware.static/-/Sites-psg-master-catalog/default/dw6e1b4a1d/images/large/701235442001_pp_01_psg.jpg"
+         data-hover="https://store.psg.fr/on/demandware.static/-/Sites-psg-master-catalog/default/dw9c7e5e5a/images/large/701235442001_pp_02_psg.jpg">
+    <h3>PSG 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1650</del><span>LE 1050</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 71, "name": "PSG 2023/24 Home Kit", "price": 1050, "image": "https://store.psg.fr/on/demandware.static/-/Sites-psg-master-catalog/default/dw6e1b4a1d/images/large/701235442001_pp_01_psg.jpg", "team": "PSG", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Chelsea 2023 -->
+  <div class="product-card season2023-card" data-id="72" data-team="chelsea">
+    <span class="team-badge chelsea-badge">Chelsea FC</span>
+    <span class="vintage-tag">LEGENDARY</span>
+    <img src="https://store.chelseafc.com/on/demandware.static/-/Sites-chelsea-store-master/default/dwf3e1c4e1/images/large/701236134001_pp_01_cfc.jpg"
+         data-hover="https://store.chelseafc.com/on/demandware.static/-/Sites-chelsea-store-master/default/dw8d3e2d2a/images/large/701236134001_pp_02_cfc.jpg">
+    <h3>Chelsea 2023/24 Home Kit</h3>
+    <p class="price"><del>LE 1600</del><span>LE 1000</span></p>
+    <button class="add-to-cart"
+      data-product='{"id": 72, "name": "Chelsea 2023/24 Home Kit", "price": 1000, "image": "https://store.chelseafc.com/on/demandware.static/-/Sites-chelsea-store-master/default/dwf3e1c4e1/images/large/701236134001_pp_01_cfc.jpg", "team": "Chelsea", "season": "2023"}'>
+      Add to Cart
+    </button>
+  </div>
+
+</section>
+
+<!-- CART MODAL -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-modal-content">
+    <div class="cart-modal-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart-btn" id="closeCartBtn">×</button>
+    </div>
+    <div class="cart-modal-body" id="cartModalBody">
+      <!-- Cart items will be loaded here -->
+    </div>
+    <div class="cart-modal-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="modalCartTotal">LE 0.00</span>
+      </div>
+      <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+        View Full Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>JERSEY<span>Wear</span></h2>
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-menu">
+      <a href="test.html">HOME</a>
+      <a href="2025.html">2025 SEASON</a>
+      <a href="2024.html">2024 SEASON</a>
+      <a href="2023.html">2023 SEASON</a>
+      <a href="iconic.html">ICONIC JERSEYS</a>
+      <a href="national_jersey.html">NATIONAL JERSEYS</a>
+      <a href="world_cup.html">WORLD CUP JERSEYS</a>
+      <a href="special_edition.html">SPECIAL EDITIONS</a>
+      <a href="hot_offer.html">HOT OFFERS</a>
+      <a href="profile.html">Log in</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-newsletter">
+      <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+      <p>Be the first to know about our newest arrivals,<br>
+         special offers and store events near you!</p>
+      <div class="newsletter-box">
+        <input type="email" placeholder="Enter your email">
+        <button>✉</button>
+      </div>
+      <div class="footer-socials">
+        <span>f</span>
+        <span>📘</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Jersey Wears</p>
+    <p>Powered by Afroto</p>
+  </div>
+</footer>
+
+</body>
+</html>

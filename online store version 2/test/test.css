@@ -417,8 +417,8 @@ html {
 /* HOT OFFERS HERO */
 .hot-hero {
   height: 50vh;
-  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-              url("https://th.bing.com/th/id/R.9dc04c4e3743513b72bfe94dba38e7a8?rik=o56DUxIvdHPoZA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fMx8QOkb.jpg&ehk=taDX9VYOI2J9VX8%2frs7gyfWMgy4Y2%2bBSAWtBdAGKQG0%3d&risl=&pid=ImgRaw&r=0") center/cover no-repeat;
+  background: 
+              url("https://www.ixpap.com/images/2022/09/Champions-League-Wallpaper-21.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -475,12 +475,10 @@ html {
 .dark-mode .hot-hero {
   background:
     linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85)),
-    url("https://th.bing.com/th/id/R.9dc04c4e3743513b72bfe94dba38e7a8?rik=o56DUxIvdHPoZA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fMx8QOkb.jpg&ehk=taDX9VYOI2J9VX8%2frs7gyfWMgy4Y2%2bBSAWtBdAGKQG0%3d&risl=&pid=ImgRaw&r=0") center/cover no-repeat;
+    url("https://www.ixpap.com/images/2022/09/Champions-League-Wallpaper-21.jpg") ;
 }
 
-.dark-mode .hot-hero p {
-  color: #ff9a9a;
-}
+
 
 /* HOT PRODUCTS BACKGROUND */
 .dark-mode .hot-products {
@@ -1588,4 +1586,815 @@ html {
   opacity: 0.05;
   pointer-events: none;
   z-index: 1;
+}
+/* 2025 Season Page Specific Styles */
+.season2025-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.season2025-hero::before {
+  content: "2025";
+  position: absolute;
+  font-size: 200px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.season2025-hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.season2025-hero p {
+  font-size: 24px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+/* 2025 Season Products Section */
+.season2025-products {
+  padding: 20px;
+}
+
+.season2025-card {
+  border: 3px solid;
+  position: relative;
+  transition: all 0.3s ease;
+  background: white;
+  overflow: hidden;
+}
+
+.season2025-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Badge Styling */
+.team-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Team-specific badge colors */
+.barcelona-badge {
+  background: linear-gradient(45deg, #A50044, #004D98);
+  color: white;
+}
+
+.liverpool-badge {
+  background: linear-gradient(45deg, #C8102E, #00B2A9);
+  color: white;
+}
+
+.mancity-badge {
+  background: linear-gradient(45deg, #6CABDD, #1C2C5B);
+  color: white;
+}
+
+.realmadrid-badge {
+  background: linear-gradient(45deg, #FFFFFF, #FEBE10);
+  color: #00529F;
+}
+
+.arsenal-badge {
+  background: linear-gradient(45deg, #EF0107, #063672);
+  color: white;
+}
+
+.bayern-badge {
+  background: linear-gradient(45deg, #DC052D, #0066B2);
+  color: white;
+}
+
+.psg-badge {
+  background: linear-gradient(45deg, #004170, #DA291C);
+  color: white;
+}
+
+.chelsea-badge {
+  background: linear-gradient(45deg, #034694, #DBA111);
+  color: white;
+}
+
+/* Team-specific border colors */
+[data-team="barcelona"] {
+  border-color: #A50044;
+}
+
+[data-team="liverpool"] {
+  border-color: #C8102E;
+}
+
+[data-team="mancity"] {
+  border-color: #6CABDD;
+}
+
+[data-team="realmadrid"] {
+  border-color: #FEBE10;
+}
+
+[data-team="arsenal"] {
+  border-color: #EF0107;
+}
+
+[data-team="bayern"] {
+  border-color: #DC052D;
+}
+
+[data-team="psg"] {
+  border-color: #004170;
+}
+
+[data-team="chelsea"] {
+  border-color: #034694;
+}
+
+/* 2025 Season Add to Cart buttons */
+.season2025-card .add-to-cart {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.season2025-card .add-to-cart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(45deg, #5a6fd8, #6a4390) !important;
+}
+
+/* Team-specific button colors on hover */
+[data-team="barcelona"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #94003d, #004480) !important;
+}
+
+[data-team="liverpool"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #b40e29, #009a90) !important;
+}
+
+[data-team="mancity"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #5b96c9, #18274a) !important;
+}
+
+[data-team="realmadrid"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #e6e6e6, #e8b10e) !important;
+  color: #00529F;
+}
+
+[data-team="arsenal"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #d70107, #052d5f) !important;
+}
+
+[data-team="bayern"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #c40428, #00589a) !important;
+}
+
+[data-team="psg"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #003960, #c7251c) !important;
+}
+
+[data-team="chelsea"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #023d7d, #c7990f) !important;
+}
+
+/* Ensure proper spacing */
+.season2025-products .product-card {
+  margin-bottom: 30px;
+}
+
+/* Modern 2025 effect */
+.season2025-card::after {
+  content: '2025';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba(102, 126, 234, 0.1);
+  z-index: 1;
+}
+/* 2024 Season Page Specific Styles */
+.season2024-hero {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.season2024-hero::before {
+  content: "2024";
+  position: absolute;
+  font-size: 200px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.15);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.season2024-hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.season2024-hero p {
+  font-size: 24px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+/* 2024 Season Products Section */
+.season2024-products {
+  padding: 20px;
+}
+
+.season2024-card {
+  border: 3px solid;
+  position: relative;
+  transition: all 0.3s ease;
+  background: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.season2024-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 176, 155, 0.2);
+}
+
+/* 2024 Season Team Badges (slightly different from 2025) */
+.season2024-card .team-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+}
+
+/* 2024-specific badge colors */
+.season2024-card .barcelona-badge {
+  --primary: #A50044;
+  --secondary: #004D98;
+}
+
+.season2024-card .liverpool-badge {
+  --primary: #C8102E;
+  --secondary: #00B2A9;
+}
+
+.season2024-card .mancity-badge {
+  --primary: #6CABDD;
+  --secondary: #1C2C5B;
+}
+
+.season2024-card .realmadrid-badge {
+  --primary: #FFFFFF;
+  --secondary: #FEBE10;
+  color: #00529F !important;
+}
+
+.season2024-card .arsenal-badge {
+  --primary: #EF0107;
+  --secondary: #063672;
+}
+
+.season2024-card .bayern-badge {
+  --primary: #DC052D;
+  --secondary: #0066B2;
+}
+
+.season2024-card .psg-badge {
+  --primary: #004170;
+  --secondary: #DA291C;
+}
+
+.season2024-card .chelsea-badge {
+  --primary: #034694;
+  --secondary: #DBA111;
+}
+
+/* 2024 Season border colors (darker for classic look) */
+.season2024-card[data-team="barcelona"] {
+  border-color: #8A003B;
+}
+
+.season2024-card[data-team="liverpool"] {
+  border-color: #B00E29;
+}
+
+.season2024-card[data-team="mancity"] {
+  border-color: #5B96C9;
+}
+
+.season2024-card[data-team="realmadrid"] {
+  border-color: #E8B10E;
+}
+
+.season2024-card[data-team="arsenal"] {
+  border-color: #D70107;
+}
+
+.season2024-card[data-team="bayern"] {
+  border-color: #C40428;
+}
+
+.season2024-card[data-team="psg"] {
+  border-color: #003960;
+}
+
+.season2024-card[data-team="chelsea"] {
+  border-color: #023D7D;
+}
+
+/* 2024 Season Add to Cart buttons - Green Theme */
+.season2024-card .add-to-cart {
+  background: linear-gradient(45deg, #00b09b, #96c93d) !important;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.season2024-card .add-to-cart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 176, 155, 0.3);
+  background: linear-gradient(45deg, #009b87, #86b936) !important;
+}
+
+/* Team-specific hover effects for 2024 */
+.season2024-card[data-team="barcelona"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #8A003B, #004480) !important;
+}
+
+.season2024-card[data-team="liverpool"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #B00E29, #009A90) !important;
+}
+
+.season2024-card[data-team="mancity"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #5B96C9, #18274A) !important;
+}
+
+.season2024-card[data-team="realmadrid"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #E6E6E6, #E8B10E) !important;
+  color: #00529F;
+}
+
+.season2024-card[data-team="arsenal"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #D70107, #052D5F) !important;
+}
+
+.season2024-card[data-team="bayern"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #C40428, #00589A) !important;
+}
+
+.season2024-card[data-team="psg"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #003960, #C7251C) !important;
+}
+
+.season2024-card[data-team="chelsea"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #023D7D, #C7990F) !important;
+}
+
+/* Ensure proper spacing */
+.season2024-products .product-card {
+  margin-bottom: 30px;
+}
+
+/* Classic 2024 watermark */
+.season2024-card::after {
+  content: '2024';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba(0, 176, 155, 0.1);
+  z-index: 1;
+}
+
+/* Price styling for 2024 (slightly different from 2025) */
+.season2024-card .price del {
+  color: #666;
+  font-size: 14px;
+}
+
+.season2024-card .price span {
+  color: #00b09b;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Add slight vintage effect for last season */
+.season2024-card {
+  filter: saturate(0.95);
+}
+
+.season2024-card:hover {
+  filter: saturate(1);
+}
+/* 2023 Season Page Specific Styles */
+.season2023-hero {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.season2023-hero::before {
+  content: "2023";
+  position: absolute;
+  font-size: 200px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: 'Times New Roman', serif;
+}
+
+.season2023-hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  animation: vintageAppear 1.5s ease-out;
+  font-family: 'Times New Roman', serif;
+}
+
+@keyframes vintageAppear {
+  0% { 
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(5px);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.season2023-hero p {
+  font-size: 24px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+  font-style: italic;
+}
+
+/* 2023 Season Products Section */
+.season2023-products {
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.season2023-card {
+  border: 3px solid;
+  position: relative;
+  transition: all 0.3s ease;
+  background: #fffaf0;
+  overflow: hidden;
+  border-radius: 8px;
+  filter: sepia(0.1);
+}
+
+.season2023-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(139, 69, 19, 0.2);
+  filter: sepia(0);
+}
+
+/* Vintage tag styling */
+.vintage-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #8B4513;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 10px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #8B4513;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: 'Courier New', monospace;
+}
+
+/* 2023 Season Team Badges (vintage style) */
+.season2023-card .team-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px; /* Square vintage style */
+  font-weight: bold;
+  font-size: 11px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, var(--vintage-primary), var(--vintage-secondary));
+  font-family: 'Courier New', monospace;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Vintage badge colors for 2023 */
+.season2023-card .barcelona-badge {
+  --vintage-primary: #8A003B;
+  --vintage-secondary: #003D7A;
+}
+
+.season2023-card .liverpool-badge {
+  --vintage-primary: #A80E29;
+  --vintage-secondary: #009080;
+}
+
+.season2023-card .mancity-badge {
+  --vintage-primary: #5B8FC9;
+  --vintage-secondary: #18244A;
+}
+
+.season2023-card .realmadrid-badge {
+  --vintage-primary: #E6E6E6;
+  --vintage-secondary: #D8A10E;
+  color: #004F9F !important;
+}
+
+.season2023-card .arsenal-badge {
+  --vintage-primary: #C70107;
+  --vintage-secondary: #05255F;
+}
+
+.season2023-card .bayern-badge {
+  --vintage-primary: #BC0428;
+  --vintage-secondary: #00508A;
+}
+
+.season2023-card .psg-badge {
+  --vintage-primary: #003050;
+  --vintage-secondary: #C0251C;
+}
+
+.season2023-card .chelsea-badge {
+  --vintage-primary: #02357D;
+  --vintage-secondary: #C0900F;
+}
+
+/* 2023 Season border colors (vintage, faded look) */
+.season2023-card[data-team="barcelona"] {
+  border-color: #7A0033;
+  border-style: double;
+}
+
+.season2023-card[data-team="liverpool"] {
+  border-color: #980E25;
+  border-style: double;
+}
+
+.season2023-card[data-team="mancity"] {
+  border-color: #4B86B9;
+  border-style: double;
+}
+
+.season2023-card[data-team="realmadrid"] {
+  border-color: #D8A10E;
+  border-style: double;
+}
+
+.season2023-card[data-team="arsenal"] {
+  border-color: #B70107;
+  border-style: double;
+}
+
+.season2023-card[data-team="bayern"] {
+  border-color: #AC0424;
+  border-style: double;
+}
+
+.season2023-card[data-team="psg"] {
+  border-color: #002840;
+  border-style: double;
+}
+
+.season2023-card[data-team="chelsea"] {
+  border-color: #012D6D;
+  border-style: double;
+}
+
+/* 2023 Season Add to Cart buttons - Vintage Brown Theme */
+.season2023-card .add-to-cart {
+  background: linear-gradient(45deg, #8B4513, #A0522D) !important;
+  color: #FFD700;
+  border: 1px solid #8B4513;
+  padding: 12px 24px;
+  border-radius: 4px; /* Square vintage style */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+}
+
+.season2023-card .add-to-cart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+  background: linear-gradient(45deg, #A0522D, #CD853F) !important;
+  color: #FFD700;
+}
+
+/* Team-specific vintage hover effects */
+.season2023-card[data-team="barcelona"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #7A0033, #00356A) !important;
+}
+
+.season2023-card[data-team="liverpool"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #980E25, #008070) !important;
+}
+
+.season2023-card[data-team="mancity"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #4B86B9, #16203A) !important;
+}
+
+.season2023-card[data-team="realmadrid"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #D6D6D6, #C8990E) !important;
+  color: #004F9F;
+}
+
+.season2023-card[data-team="arsenal"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #B70107, #04204F) !important;
+}
+
+.season2023-card[data-team="bayern"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #AC0424, #00487A) !important;
+}
+
+.season2023-card[data-team="psg"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #002840, #B0251C) !important;
+}
+
+.season2023-card[data-team="chelsea"] .add-to-cart:hover {
+  background: linear-gradient(45deg, #012D6D, #B0800F) !important;
+}
+
+/* Ensure proper spacing */
+.season2023-products .product-card {
+  margin-bottom: 30px;
+}
+
+/* Vintage 2023 watermark */
+.season2023-card::after {
+  content: '2023';
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgba(139, 69, 19, 0.08);
+  z-index: 1;
+  font-family: 'Times New Roman', serif;
+  transform: rotate(-15deg);
+}
+
+/* Vintage price styling for 2023 */
+.season2023-card .price del {
+  color: #8B4513;
+  font-size: 14px;
+  text-decoration: line-through double;
+  font-family: 'Courier New', monospace;
+}
+
+.season2023-card .price span {
+  color: #8B4513;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+/* Vintage texture overlay */
+.season2023-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/paper.png');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Vintage image styling */
+.season2023-card img {
+  filter: contrast(1.1) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.season2023-card:hover img {
+  filter: contrast(1) brightness(1);
+}
+
+/* Product title vintage style */
+.season2023-card h3 {
+  font-family: 'Georgia', serif;
+  color: #333;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+/* Background pattern for the section */
+.season2023-products {
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
