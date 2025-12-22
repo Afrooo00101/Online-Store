@@ -1,0 +1,385 @@
+-- Use the database
+USE online_store;
+
+-- Drop tables in correct order (if they exist)
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS bulk_uploads;
+DROP TABLE IF EXISTS discounts;
+DROP TABLE IF EXISTS product_variants;
+DROP TABLE IF EXISTS product_videos;
+DROP TABLE IF EXISTS product_images;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS admin_users;
+DROP TABLE IF EXISTS users;
+
+-- Drop triggers if they exist
+DROP TRIGGER IF EXISTS generate_sku;
+DROP TRIGGER IF EXISTS generate_sku_before_insert;
+
+------------------------------------------------------------
+-- USERS TABLE (customers)
+------------------------------------------------------------
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(150) NOT NULL,
+    email VARCHAR(150) UNIQUE,
+    phone VARCHAR(20) UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+------------------------------------------------------------
+-- ADMINS TABLE
+------------------------------------------------------------
+CREATE TABLE admin_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('superadmin','editor','manager') DEFAULT 'manager',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+------------------------------------------------------------
+-- CATEGORIES
+------------------------------------------------------------
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    parent_id INT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(parent_id) REFERENCES categories(id) ON DELETE SET NULL
+);
+
+------------------------------------------------------------
+-- PRODUCTS
+------------------------------------------------------------
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    category_id INT,
+    price DECIMAL(10,2) NOT NULL,
+    discount_price DECIMAL(10,2) DEFAULT NULL,
+    stock INT DEFAULT 0,
+    stock_status ENUM('in_stock','out_of_stock','preorder') DEFAULT 'in_stock',
+    sku VARCHAR(100) UNIQUE,
+    attributes JSON,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE SET NULL
+);
+
+------------------------------------------------------------
+-- PRODUCT IMAGES (MULTIPLE)
+------------------------------------------------------------
+CREATE TABLE product_images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    filename VARCHAR(255) NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    is_main TINYINT(1) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+------------------------------------------------------------
+-- PRODUCT VIDEOS
+------------------------------------------------------------
+CREATE TABLE product_videos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    video_path VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+------------------------------------------------------------
+-- PRODUCT VARIANTS (optional: sizes, colors…)
+------------------------------------------------------------
+CREATE TABLE product_variants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    variant_name VARCHAR(150),
+    variant_value VARCHAR(150),
+    additional_price DECIMAL(10,2) DEFAULT 0.00,
+    stock INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+------------------------------------------------------------
+-- DISCOUNTS
+------------------------------------------------------------
+CREATE TABLE discounts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT,
+    discount_percent DECIMAL(5,2),
+    start_date DATE,
+    end_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+------------------------------------------------------------
+-- BULK UPLOAD LOG
+------------------------------------------------------------
+CREATE TABLE bulk_uploads (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_id INT,
+    file_name VARCHAR(255),
+    total_rows INT,
+    successful_rows INT,
+    failed_rows INT,
+    upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(admin_id) REFERENCES admin_users(id)
+);
+
+------------------------------------------------------------
+-- ORDERS
+------------------------------------------------------------
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    status ENUM('pending','paid','shipped','completed','cancelled') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+------------------------------------------------------------
+-- ORDER ITEMS
+------------------------------------------------------------
+CREATE TABLE order_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    variant_id INT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE,
+    FOREIGN KEY(variant_id) REFERENCES product_variants(id) ON DELETE SET NULL
+);
+
+------------------------------------------------------------
+-- CREATE TRIGGERS
+------------------------------------------------------------
+DELIMITER $$
+
+-- Trigger for SKU generation (using timestamp method)
+CREATE TRIGGER generate_sku_before_insert
+BEFORE INSERT ON products
+FOR EACH ROW
+BEGIN
+    IF NEW.sku IS NULL OR NEW.sku = '' THEN
+        -- Use a timestamp-based SKU
+        SET NEW.sku = CONCAT('PROD-', DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'), 
+                           '-', LPAD(FLOOR(RAND() * 1000), 3, '0'));
+    END IF;
+END$$
+
+-- Trigger to update stock_status automatically
+CREATE TRIGGER update_stock_status_before_update
+BEFORE UPDATE ON products
+FOR EACH ROW
+BEGIN
+    IF NEW.stock <= 0 THEN
+        SET NEW.stock_status = 'out_of_stock';
+    ELSE
+        SET NEW.stock_status = 'in_stock';
+    END IF;
+END$$
+
+DELIMITER ;
+
+------------------------------------------------------------
+-- INSERT SAMPLE DATA
+------------------------------------------------------------
+
+-- Insert admin user
+INSERT INTO admin_users (username, email, password, role) VALUES
+('admin', 'admin@store.com', 
+ '$2y$10$5E.XVZpRFN5dQy5yPjWk1.tTfe5nH.YCkZB2YbEAdxZIxI9RBHy1S', 
+ 'superadmin');
+
+-- Insert sample categories
+INSERT INTO categories (name, parent_id) VALUES
+('Electronics', NULL),
+('Mobile Phones', 1),
+('Smartphones', 2),
+('Laptops', 1),
+('Fashion', NULL),
+('Men', 5),
+('Women', 5),
+('Home & Garden', NULL);
+
+-- Insert sample products
+INSERT INTO products (name, description, category_id, price, discount_price, stock) VALUES
+('iPhone 15 Pro', 'Latest iPhone with A17 Pro chip', 3, 999.99, 899.99, 50),
+('Samsung Galaxy S24', 'Android flagship phone', 3, 799.99, 749.99, 30),
+('MacBook Pro 14" M3', '14-inch MacBook Pro with M3 chip', 4, 1999.99, NULL, 25),
+('Dell XPS 15', '15-inch business laptop', 4, 1499.99, 1399.99, 15),
+('Men\'s Cotton T-Shirt', '100% Cotton Premium T-Shirt', 6, 29.99, 24.99, 100),
+('Women\'s Summer Dress', 'Elegant summer dress', 7, 89.99, 79.99, 30),
+('Wireless Earbuds', 'Noise cancelling wireless earbuds', 1, 129.99, 99.99, 75),
+('Gaming Mouse', 'RGB gaming mouse with 16000 DPI', 1, 59.99, 49.99, 40);
+
+-- Insert product images
+INSERT INTO product_images (product_id, filename, image_path, is_main) VALUES
+(1, 'iphone15pro-main.jpg', '/uploads/products/iphone15pro-main.jpg', 1),
+(1, 'iphone15pro-2.jpg', '/uploads/products/iphone15pro-2.jpg', 0),
+(2, 'samsung-s24-main.jpg', '/uploads/products/samsung-s24-main.jpg', 1),
+(3, 'macbookpro-main.jpg', '/uploads/products/macbookpro-main.jpg', 1),
+(4, 'dell-xps15-main.jpg', '/uploads/products/dell-xps15-main.jpg', 1),
+(5, 'tshirt-main.jpg', '/uploads/products/tshirt-main.jpg', 1),
+(6, 'dress-main.jpg', '/uploads/products/dress-main.jpg', 1),
+(7, 'earbuds-main.jpg', '/uploads/products/earbuds-main.jpg', 1),
+(8, 'mouse-main.jpg', '/uploads/products/mouse-main.jpg', 1);
+
+-- Insert product variants (sizes and colors)
+INSERT INTO product_variants (product_id, variant_name, variant_value, additional_price, stock) VALUES
+(5, 'Size', 'S', 0.00, 25),
+(5, 'Size', 'M', 0.00, 30),
+(5, 'Size', 'L', 0.00, 25),
+(5, 'Size', 'XL', 0.00, 20),
+(5, 'Color', 'Black', 0.00, 40),
+(5, 'Color', 'White', 0.00, 35),
+(5, 'Color', 'Blue', 0.00, 25),
+(6, 'Size', 'XS', 0.00, 10),
+(6, 'Size', 'S', 0.00, 8),
+(6, 'Size', 'M', 0.00, 7),
+(6, 'Size', 'L', 0.00, 5),
+(6, 'Color', 'Red', 0.00, 15),
+(6, 'Color', 'Black', 0.00, 10),
+(6, 'Color', 'White', 0.00, 5);
+
+-- Insert sample users
+INSERT INTO users (full_name, email, phone, password) VALUES
+('John Doe', 'john@example.com', '+201000000001', 
+ '$2y$10$5E.XVZpRFN5dQy5yPjWk1.tTfe5nH.YCkZB2YbEAdxZIxI9RBHy1S'),
+('Jane Smith', 'jane@example.com', '+201000000002',
+ '$2y$10$5E.XVZpRFN5dQy5yPjWk1.tTfe5nH.YCkZB2YbEAdxZIxI9RBHy1S'),
+('Ahmed Mohamed', 'ahmed@example.com', '+201000000003',
+ '$2y$10$5E.XVZpRFN5dQy5yPjWk1.tTfe5nH.YCkZB2YbEAdxZIxI9RBHy1S');
+
+-- Insert sample orders
+INSERT INTO orders (user_id, total_amount, status) VALUES
+(1, 189.98, 'completed'),
+(2, 999.99, 'shipped'),
+(3, 1599.98, 'pending');
+
+-- Insert order items
+INSERT INTO order_items (order_id, product_id, quantity, price) VALUES
+(1, 5, 2, 24.99),  -- 2 T-Shirts
+(1, 7, 1, 99.99),  -- 1 Wireless Earbuds
+(2, 1, 1, 899.99), -- 1 iPhone 15 Pro
+(3, 3, 1, 1999.99); -- 1 MacBook Pro (discounted price NULL)
+
+-- Insert discounts
+INSERT INTO discounts (product_id, discount_percent, start_date, end_date) VALUES
+(1, 10.00, '2024-01-01', '2024-12-31'),
+(2, 5.00, '2024-01-01', '2024-12-31'),
+(5, 15.00, '2024-01-01', '2024-12-31'),
+(7, 20.00, '2024-01-01', '2024-06-30');
+
+------------------------------------------------------------
+-- DISPLAY RESULTS
+------------------------------------------------------------
+
+-- Show all tables
+SHOW TABLES;
+
+-- Display admin users
+SELECT * FROM admin_users;
+
+-- Display categories with hierarchy
+SELECT 
+    c1.id,
+    c1.name as category,
+    c2.name as parent_category
+FROM categories c1
+LEFT JOIN categories c2 ON c1.parent_id = c2.id
+ORDER BY c1.parent_id, c1.name;
+
+-- Display products with categories
+SELECT 
+    p.id,
+    p.name,
+    p.sku,
+    c.name as category,
+    p.price,
+    p.discount_price,
+    p.stock,
+    p.stock_status,
+    p.created_at
+FROM products p
+LEFT JOIN categories c ON p.category_id = c.id
+ORDER BY p.created_at DESC;
+
+-- Display product images
+SELECT 
+    pi.id,
+    pi.product_id,
+    p.name as product_name,
+    pi.filename,
+    pi.image_path,
+    pi.is_main,
+    pi.created_at
+FROM product_images pi
+JOIN products p ON pi.product_id = p.id
+ORDER BY pi.product_id, pi.is_main DESC;
+
+-- Display product variants
+SELECT 
+    pv.id,
+    pv.product_id,
+    p.name as product_name,
+    pv.variant_name,
+    pv.variant_value,
+    pv.additional_price,
+    pv.stock
+FROM product_variants pv
+JOIN products p ON pv.product_id = p.id
+ORDER BY pv.product_id, pv.variant_name;
+
+-- Display users
+SELECT * FROM users;
+
+-- Display orders with user info
+SELECT 
+    o.id as order_id,
+    o.total_amount,
+    o.status,
+    o.created_at,
+    u.full_name,
+    u.email
+FROM orders o
+JOIN users u ON o.user_id = u.id
+ORDER BY o.created_at DESC;
+
+-- Display order items
+SELECT 
+    oi.id,
+    oi.order_id,
+    p.name as product_name,
+    oi.quantity,
+    oi.price,
+    oi.quantity * oi.price as item_total
+FROM order_items oi
+JOIN products p ON oi.product_id = p.id
+ORDER BY oi.order_id;
+
+-- Display discounts
+SELECT 
+    d.id,
+    p.name as product_name,
+    d.discount_percent,
+    d.start_date,
+    d.end_date
+FROM discounts d
+JOIN products p ON d.product_id = p.id
+WHERE CURDATE() BETWEEN d.start_date AND d.end_date;        
